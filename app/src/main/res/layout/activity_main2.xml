@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F87066"
     tools:context=".MainActivity2">
 
     <LinearLayout
@@ -56,7 +57,6 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/tv"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -196,6 +196,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#BFEBA238"
+                    android:onClick="go_back"
                     android:text="Button"
                     android:textColorLink="#673AB7" />
             </LinearLayout>

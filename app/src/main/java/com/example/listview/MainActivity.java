@@ -7,11 +7,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void reset_views()
+    {
+        /*
+        This function reset views in the page
+         */
+        sw1.setChecked(false);
+        eD1.setText("");
+        eD2.setText("");
+    }
+
     public void next_page(View view)
     {
         String str1, str2;
@@ -69,11 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 si.putExtra("k",Double.parseDouble(str2));
                 si.putExtra("bool",sw1.isChecked());
                 startActivity(si);
-                //need to reset eD1 eD2
 
-
-
-
+                reset_views();
             }
             else
             {
