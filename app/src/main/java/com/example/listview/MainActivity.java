@@ -57,18 +57,17 @@ public class MainActivity extends AppCompatActivity {
     {
         String str1, str2;
         str1 = eD1.getText().toString();
-        if(str1.isEmpty())
+        if(!str1.isEmpty())
         {
             str2 = eD2.getText().toString();
-            if(str2.isEmpty())
+            if(!str2.isEmpty())
             {
                 //code
                 si = new Intent(this, MainActivity2.class);
 
-                si.putExtra("a",Double.parseDouble(str1));//convert str -> double
+                si.putExtra("x1",Double.parseDouble(str1));//convert str -> double
                 si.putExtra("k",Double.parseDouble(str2));
                 si.putExtra("bool",sw1.isChecked());
-
                 startActivity(si);
                 //need to reset eD1 eD2
 
@@ -78,13 +77,12 @@ public class MainActivity extends AppCompatActivity {
             }
             else
             {
-                Toast.makeText(this, "You need Enter a difference or multiplication factor", Toast.LENGTH_SHORT);
+                Toast.makeText(this, "You need Enter a difference or multiplication factor", Toast.LENGTH_SHORT).show();
             }
         }
         else
         {
-            Toast.makeText(this, "You need Enter a number", Toast.LENGTH_SHORT);
-
+            Toast.makeText(this, "You need Enter a number", Toast.LENGTH_SHORT).show();
         }
     }
 }
