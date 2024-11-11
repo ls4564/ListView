@@ -56,7 +56,7 @@ public class MainActivity2 extends AppCompatActivity implements
             arrStr[i] = String.format("%.2f", arr[i]);  // המרה מ-double ל-Double
         }
 
-            ArrayAdapter<String> adp = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,arrStr);
+            ArrayAdapter<String> adp = new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,arrStr);
         lv.setAdapter(adp);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemClickListener(this);
