@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         if(!check_legal_input(str1) ) {
                 if (!str1.isEmpty()) {
                     str2 = eD2.getText().toString();
-                    if(!check_legal_input(str1) )
+                    if(!check_legal_input(str2) )
                     {
                         if (!str2.isEmpty()) {
                                 //code
