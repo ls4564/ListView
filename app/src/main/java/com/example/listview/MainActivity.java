@@ -59,33 +59,47 @@ public class MainActivity extends AppCompatActivity {
         eD2.setText("");
     }
 
+    public boolean check_legal_input(String input)
+    {
+        // true not good
+        // false  good
+        return input.equals(".") || input.equals("-") ;
+    }
+
     public void next_page(View view)
     {
         String str1, str2;
         str1 = eD1.getText().toString();
-        if(!str1.isEmpty())
-        {
-            str2 = eD2.getText().toString();
-            if(!str2.isEmpty())
-            {
-                //code
-                si = new Intent(this, MainActivity2.class);
+        if(!check_legal_input(str1) ) {
+                if (!str1.isEmpty()) {
+                    str2 = eD2.getText().toString();
+                    if(!check_legal_input(str1) )
+                    {
+                        if (!str2.isEmpty()) {
+                                //code
+                                si = new Intent(this, MainActivity2.class);
 
-                si.putExtra("x1",Double.parseDouble(str1));//convert str -> double
-                si.putExtra("k",Double.parseDouble(str2));
-                si.putExtra("bool",sw1.isChecked());
-                startActivity(si);
+                                si.putExtra("x1", Double.parseDouble(str1));//convert str -> double
+                                si.putExtra("k", Double.parseDouble(str2));
+                                si.putExtra("bool", sw1.isChecked());
+                                startActivity(si);
 
-                reset_views();
+                                reset_views();
+
+                        } else {
+                            Toast.makeText(this, "You need Enter a difference or multiplication factor", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.makeText(this, " You Enter a Illegal input in Ed2", Toast.LENGTH_SHORT).show();
+                    }
+
+            } else {
+                Toast.makeText(this, "You need Enter a number", Toast.LENGTH_SHORT).show();
             }
-            else
-            {
-                Toast.makeText(this, "You need Enter a difference or multiplication factor", Toast.LENGTH_SHORT).show();
-            }
-        }
-        else
-        {
-            Toast.makeText(this, "You need Enter a number", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, " You Enter a Illegal input in Ed1", Toast.LENGTH_SHORT).show();
         }
     }
 }
